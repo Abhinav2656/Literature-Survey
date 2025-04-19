@@ -1,0 +1,184 @@
+{
+  "main": {
+    "id": "ec6a690d46bd6140",
+    "type": "split",
+    "children": [
+      {
+        "id": "1b30217382033acf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dc5bef24b87ba498",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "General Overview/A review on medical imaging synthesis using deep learning and its clinical applications.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "A review on medical imaging synthesis using deep learning and its clinical applications"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7703d6d425b23d4d",
+    "type": "split",
+    "children": [
+      {
+        "id": "f9c958ff7a7c0390",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4839330228f58588",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "9c5cd68da0fe54a0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "ce0602f34d544caa",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2a902a86316e83c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "1672f01ccd85e15b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "194d4b2b062c418c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "General Overview/A review on medical imaging synthesis using deep learning and its clinical applications.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for A review on medical imaging synthesis using deep learning and its clinical applications"
+            }
+          },
+          {
+            "id": "bcc45c90ae482526",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "General Overview/A review on medical imaging synthesis using deep learning and its clinical applications.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from A review on medical imaging synthesis using deep learning and its clinical applications"
+            }
+          },
+          {
+            "id": "718b399b1c03e81e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "ee374928d4eb6dc7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "General Overview/A review on medical imaging synthesis using deep learning and its clinical applications.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of A review on medical imaging synthesis using deep learning and its clinical applications"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "dc5bef24b87ba498",
+  "lastOpenFiles": [
+    "General Overview/HLSNC-GAN_Medical_Image_Synthesis_Using_Hinge_Loss_and_Switchable_Normalization_in_CycleGAN.md",
+    "General Overview/CycleGAN Models for MRI Image Translation.md",
+    "General Overview/Cross Modality Medical Image Synthesis for Improving Liver Segmentation.md",
+    "General Overview/A review on medical imaging synthesis using deep learning and its clinical applications.md",
+    "Papers/Cross Modality Medical Image Synthesis for_Improving Liver Segmentation.pdf",
+    "General Overview",
+    "Papers/A review on medical imaging synthesis using deep learning\nand its clinical applications.pdf",
+    "Papers",
+    "Papers/HLSNC-GAN_Medical_Image_Synthesis_Using_Hinge_Loss_and_Switchable_Normalization_in_CycleGAN.pdf",
+    "Papers/CycleGAN Models for MRI Image Translation.pdf"
+  ]
+}
