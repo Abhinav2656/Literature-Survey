@@ -1,4 +1,6 @@
-# ***Major Project Literature Surveys***
+# ⛑️ ***Major Project Literature Surveys***
+
+---
 
 ## Project summary
 
@@ -70,3 +72,46 @@ The successful completion of this project could enable:
 4. Evaluation and validation (2 weeks)
 5. Documentation and final report (2 weeks)
 ``` 
+
+---
+
+### Steps to add more papers:
+
+- Clone the repository:  
+  
+```copy
+git clone https://github.com/abhi9ab/Literature-Survey.git
+```
+
+- Create a branch:  
+  
+```copy
+git branch -M main
+```
+
+- Add your findings in the appropriate Literature-Survey sub folders, i.e, "Papers" contains the actual survey papers, and "General Overview" contains the summaries with citations. Here is the prompt to get the General Overview:
+  
+```copy
+I am assigned the task of a literature survey. I have gathered some papers related to the topics mentioned in the project. I have attached a paper. You need to analyse it, check if it is relevant to my project, and give a comprehensive paper summary. Also, give the citation in an IEEE format.
+```
+
+- Stage, Commit, and Push your work  
+
+1. Add  
+   
+```copy
+git add .
+```
+2. Commit  
+   
+```copy
+git commit -m "Add Message"
+```
+3. Push  
+   
+```copy
+git push -u origin main
+```
+
+---
+
