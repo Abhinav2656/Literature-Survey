@@ -13,10 +13,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Papers/Abhinab Das/A Review on Medical Imaging Synthesis Using Deep Learning and Its Clinical Application.pdf"
+                "file": "Papers/Abhinav Pandey/Unpaired Brain MR-to-CT Synthesis using a Structure-Constrained CycleGAN.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "A Review on Medical Imaging Synthesis Using Deep Learning and Its Clinical Application"
+              "title": "Unpaired Brain MR-to-CT Synthesis using a Structure-Constrained CycleGAN"
             }
           }
         ]
@@ -166,10 +166,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dc5bef24b87ba498",
+  "active": "4839330228f58588",
   "lastOpenFiles": [
-    "General Overview/Abhinab Das/A review on medical imaging synthesis using deep learning and its clinical applications.md",
+    "General Overview/Abhishek S Ullegaddi/DC-cycleGAN Bidirectional CT-to-MR Synthesis from Unpaired Data.pdf",
+    "Papers/Abhinav Pandey/Unpaired Brain MR-to-CT Synthesis using a Structure-Constrained CycleGAN.pdf",
+    "General Overview/Abhinav Pandey/Unpaired Brain MR-to-CT Synthesis using a Structure-Constrained CycleGAN.pdf",
     "Papers/Abhinab Das/A Review on Medical Imaging Synthesis Using Deep Learning and Its Clinical Application.pdf",
+    "General Overview/Abhinab Das/A review on medical imaging synthesis using deep learning and its clinical applications.md",
     "General Overview/Cross Modality Medical Image Synthesis for Improving Liver Segmentation.md",
     "General Overview/CycleGAN Models for MRI Image Translation.md",
     "General Overview/HLSNC-GAN_Medical_Image_Synthesis_Using_Hinge_Loss_and_Switchable_Normalization_in_CycleGAN.md",
