@@ -27,30 +27,22 @@ Addresses the limitation of conventional CycleGAN where structural fidelity is n
 The **MIND feature** captures self-similarity in non-local patches around each voxel, invariant to modality.
 
 **MIND feature for voxel x:**
-```
-F_x^(\alpha)(I) = \frac{1}{Z} \exp\left( -\frac{DP(I, x, x+\alpha)}{V(I, x)} \right)
-```
+
+<img src="images/figure_1.png" alt="" width="600"/>
+
 Where:
 - _Z_ = normalization constant
 - _DP_ = patch distance:  
-```
-DP(I, x, x+\alpha) = \sum_{p \in P} (I(x + p) - I(x + \alpha + p))^2
-```
 - _V(I, x)_ = local variance:
-```
-V(I, x) = \frac{1}{4} \sum_{n \in N} DP(I, x, x + n)
-```
+
+<img src="images/figure_2.png" alt="" width="600"/>
 
 Final **Structure-Consistency Loss**:
-```
-L_structure = (1/N_{MR}|R_{nl}|) \sum_x \| F_x(G_{CT}(I_{MR})) - F_x(I_{MR}) \|_1
-            + (1/N_{CT}|R_{nl}|) \sum_x \| F_x(G_{MR}(I_{CT})) - F_x(I_{CT}) \|_1
-```
+
+<img src="images/figure_3.png" alt="" width="600"/>
 
 #### ✅ 3. Training Loss:
-```
-L_total = L_GAN + \lambda_1 * L_cycle + \lambda_2 * L_structure
-```
+
 <img src="images/training_loss.png" alt="Training Loss" width="600"/>
 
 
