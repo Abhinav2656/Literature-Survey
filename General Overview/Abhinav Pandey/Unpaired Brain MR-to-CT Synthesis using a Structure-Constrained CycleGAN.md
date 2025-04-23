@@ -51,7 +51,8 @@ L_structure = (1/N_{MR}|R_{nl}|) \sum_x \| F_x(G_{CT}(I_{MR})) - F_x(I_{MR}) \|_
 ```
 L_total = L_GAN + \lambda_1 * L_cycle + \lambda_2 * L_structure
 ```
-![Alt Text](\images\Screenshot 2025-04-23 192728.png)
+<img src="images/training_loss.png" alt="Training Loss" width="600"/>
+
 
 Where:
 - \( \lambda_1 = 10 \)
