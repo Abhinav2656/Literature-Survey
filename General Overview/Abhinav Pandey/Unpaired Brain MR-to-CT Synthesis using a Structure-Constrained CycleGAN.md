@@ -59,15 +59,83 @@ Where m is a random offset in [−5, 5].
 
 ---
 
-### 📊 Experimental Setup and Results
 
-- **Dataset:** 45 clinical brain MR and CT volumes
-- **Training/Validation/Test:** 27 / 3 / 15 patients
-- **Metrics Used:**
-  - MAE (Mean Absolute Error)
-  - PSNR (Peak Signal-to-Noise Ratio)
-  - SSIM (Structural Similarity Index)
-  - SSIM(HG): SSIM in high gradient regions (e.g., bone)
+### 📊 Experimental Setup and Evaluation
+
+This section outlines the dataset used in the study, how it was prepared, and the metrics used to evaluate the model's performance.
+
+---
+
+#### 🧠 **Dataset Overview**
+
+- The study used **45 unpaired brain MR and CT volumes** collected from clinical routines.
+- These datasets likely included different patients for MR and CT, reflecting **real-world clinical limitations** where paired MR-CT volumes are rare due to scheduling, cost, or ethical constraints.
+- **Data Split:**
+  - **Training set:** 27 subjects
+  - **Validation set:** 3 subjects
+  - **Test set:** 15 subjects
+
+The choice of using unpaired data makes the approach **more applicable to clinical settings**, where MR and CT scans are often not available for the same patient at the same time or resolution.
+
+---
+
+#### 🔄 **Preprocessing Method**
+
+Preprocessing ensures uniformity in image quality and geometry before training the model. The following steps were carried out:
+
+1. **Slice Extraction from 3D Volumes:**
+   - MR and CT scans are 3D volumes. They were converted into **2D axial slices**, as the model operates on 2D data.
+   - This approach simplifies training while still capturing useful structural information from each plane.
+
+2. **Image Alignment Strategy - Position-Based Slice Selection (PBS):**
+   - Since MR and CT images are unpaired, **PBS** was used to align the anatomical location of slices.
+   - This technique selects CT slices that correspond anatomically (by position) to a given MR slice using:
+     ```
+     T(i) = floor[(i × (K_CT - 1)) / (K_MR - 1)] + m
+     ```
+     where:
+     - *i* is the index of the MR slice,
+     - *K_CT*, *K_MR* are the number of slices in the CT and MR volumes, respectively,
+     - *m* is a random offset within [–5, +5] to add variability.
+
+3. **Intensity Normalization:**
+   - Medical images often have widely varying intensity ranges, especially between modalities like MR and CT.
+   - Normalization ensures all images have comparable intensity values, improving GAN stability.
+
+4. **Resizing:**
+   - All slices were likely resized (commonly to 256×256) to fit the model architecture and batch processing constraints.
+
+---
+
+#### 📐 **Evaluation Metrics**
+
+To assess image quality and structural preservation, the study employed several standard and domain-specific metrics:
+
+| Metric | Description |
+|--------|-------------|
+| **MAE (Mean Absolute Error)** | Measures average pixel-wise intensity error between synthesized and real CT |
+| **PSNR (Peak Signal-to-Noise Ratio)** | Reflects the overall quality and clarity of the image reconstruction |
+| **SSIM (Structural Similarity Index)** | Evaluates image similarity based on structure, contrast, and luminance |
+| **SSIM(HG)** | SSIM computed only on **high-gradient regions**, useful for checking **bone structure fidelity** in CT images |
+
+---
+
+#### 🔁 **Comparison Models**
+
+To validate the improvements brought by the proposed structure-constrained CycleGAN, results were compared against:
+
+- **Conventional CycleGAN**  
+  Baseline GAN model without structure or slice selection constraints.
+
+- **CycleGAN + PBS**  
+  Introduces position-based slice alignment to improve anatomical matching.
+
+- **CycleGAN with Paired Data**  
+  Trained with directly aligned MR-CT pairs (ideal but impractical scenario).
+
+- **Proposed Method (Structure-Constrained CycleGAN)**  
+  Adds MIND-based structural similarity loss + PBS for best alignment and realism.
+
 
 #### ⚡ Quantitative Results (Average over 15 test subjects):
 | Method             | MAE ↓ | PSNR ↑ | SSIM ↑ | SSIM(HG) ↑ |
