@@ -1,378 +1,122 @@
-📄 Paper 1: “Cross-Modality Image Synthesis from Unpaired Data Using Cycle-consistent Adversarial Networks”
-Authors: Yi Zhou, Lei Bai, Debdoot Sheet, et al.
-Source: IEEE Transactions on Medical Imaging, 2020
-DOI: 10.1109/TMI.2020.2973022
+# 📄 Paper Title: **“Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss”**  
+**Authors**: Y. Zhang, Q. Dou, H. Liu, and P. A. Heng  
+**Conference**: IJCAI 2018  
+**Link**: [Paper PDF](https://www.ijcai.org/proceedings/2018/0074.pdf)
 
-✅ Project Overview
-This paper explores a deep learning framework for cross-modality medical image synthesis, particularly CT-to-MRI and vice versa, using unpaired training data. Traditional supervised models rely heavily on paired CT/MRI datasets, which are scarce due to ethical, logistical, and technical constraints. This work addresses that challenge using a CycleGAN-based architecture with medical-specific enhancements, enabling realistic image translation and structure preservation.
+---
 
-⚙️ Technical Approach
-The proposed model adapts CycleGAN for medical image domains with the following extensions:
+### 🎯 **Objective**  
+To perform **unsupervised cross-modality adaptation** for medical image segmentation by learning **modality-invariant representations** using a CNN encoder-decoder structure enhanced with **adversarial domain adaptation**.  
+Target: Translate features learned from **MRI** to be applicable on **CT** (and vice versa) for segmentation, without labeled CT data.
 
-Gradient Consistency Loss (GCL) – added to preserve fine edge-level structures such as organ/tumor boundaries.
+---
 
-Identity Loss – ensures the model behaves as an identity mapping when the source and target modality are the same.
+### 🧠 **Methodologies & Innovations**
 
-Multi-scale training – facilitates learning both global anatomical shapes and local textures.
+- **Adversarial Feature Learning**: Introduces a discriminator to distinguish source (MRI) from target (CT) domain features.
+- **Dual Encoder-Decoder Framework**: Only source data is labeled; target domain relies on learned feature alignment.
+- **Unsupervised Adaptation Loss**: Forces target domain features to mimic the source domain’s statistical characteristics.
+- **Patch-Level Discriminator**: Discriminator works on features, not images, improving generalization.
 
-These modifications make the system more robust for clinical applications, especially where synthetic images are used for diagnostics or treatment planning.
+---
 
-🧪 Data Preprocessing (with Expressions)
-The data preprocessing pipeline is essential to standardize input from different modalities. It involves the following steps:
+### 🧪 **Data Preprocessing**
 
-1. Intensity Normalization
-Each input image 
-𝐼
-I is normalized using z-score normalization:
+#### 1. **Z-Score Normalization**  
+Standardizes each scan slice:  
+\[
+I_{\text{norm}} = \frac{I - \mu}{\sigma}
+\]  
+Where \( \mu \) and \( \sigma \) are the mean and standard deviation of the slice.
 
-𝐼
-norm
-=
-𝐼
-−
-𝜇
-𝐼
-𝜎
-𝐼
-I 
-norm
-​
- = 
-σ 
-I
-​
- 
-I−μ 
-I
-​
- 
-​
- 
-Where:
+#### 2. **Histogram Matching**  
+To reduce modality shift between CT and MRI:  
+\[
+I_{\text{matched}} = \text{CDF}^{-1}_{\text{ref}}(\text{CDF}_{\text{input}}(I))
+\]
 
-𝜇
-𝐼
-μ 
-I
-​
- : Mean pixel intensity of the image
+#### 3. **Resizing & Cropping**  
+All slices are resized to a fixed dimension (e.g., 256×256) and center-cropped.
 
-𝜎
-𝐼
-σ 
-I
-​
- : Standard deviation of pixel intensities
+#### 4. **Data Augmentation**  
+Includes flipping, rotation, and Gaussian noise to improve domain generalization.
 
-This brings MRI and CT intensities to a comparable range despite their inherent differences in Hounsfield units (CT) vs relative tissue contrast (MRI).
+---
 
-2. Histogram Matching
-To reduce modality-related contrast shift:
+### 🗂️ **Dataset Used**
 
-𝐼
-matched
-=
-HistMatch
-(
-𝐼
-source
-,
-𝐼
-reference
-)
-I 
-matched
-​
- =HistMatch(I 
-source
-​
- ,I 
-reference
-​
- )
-Where HistMatch maps the CDF (cumulative distribution function) of the source to that of the reference modality (usually MRI → CT).
+- **Source**: Multi-modal Brain Tumor Image Segmentation Benchmark (BraTS)
+  - MRI modalities used: T1c (contrast-enhanced)
+- **Target**: MICCAI 2015 Head CT Segmentation Dataset
+- **Preprocessing Details**:
+  - N4 bias field correction
+  - Skull-stripping using FSL/BET
+  - Patch-based training for memory efficiency
 
-3. Cropping and Resizing
-Images are centrally cropped to a fixed patch size (e.g., 
-256
-×
-256
-256×256) to reduce irrelevant background and focus learning on anatomical regions.
+---
 
-4. Skull Stripping (Optional)
-For brain MRIs, a binary mask is applied:
+### 🏗️ **Training Details**
 
-𝐼
-stripped
-=
-𝐼
-⋅
-𝑀
-I 
-stripped
-​
- =I⋅M
-Where 
-𝑀
-M is a binary brain mask obtained using tools like BET (Brain Extraction Tool).
+| Parameter | Value |
+|----------|-------|
+| Framework | TensorFlow |
+| Optimizer | Adam |
+| Learning Rate | 1e-4 |
+| Batch Size | 4 |
+| Losses | Cross-entropy (for segmentation), Adversarial loss (feature alignment) |
+| Training Time | ~15 hours on Nvidia GTX 1080Ti |
 
-🧠 Model Architecture
-Generators
-Based on 9-block ResNet for image-to-image mapping.
+---
 
-Uses instance normalization and ReLU activations.
+### 📈 **Evaluation Metrics**
 
-Outputs translated image 
-𝐺
-(
-𝑋
-)
-∈
-𝑌
-G(X)∈Y.
+| Metric | Description |
+|--------|-------------|
+| Dice Similarity Coefficient (DSC) | Measures overlap between predicted and ground truth masks |
+| Hausdorff Distance (HD) | Measures boundary error between segmentation contours |
+| Precision/Recall | Standard segmentation metrics to evaluate false positives/negatives |
+| Domain Classifier Accuracy | How distinguishable the features are across domains (lower is better) |
 
-Discriminators
-PatchGAN classifiers (classify 
-𝑁
-×
-𝑁
-N×N patches as real/fake instead of full image).
+---
 
-Enables high-frequency texture learning.
+### 🧩 **Challenges Addressed**
 
-Loss Functions
-Adversarial Loss:
+- **No paired data** between MRI and CT scans  
+- MRI and CT have vastly different tissue contrasts and artifacts  
+- Labeling is available only for MRI → Need to generalize to CT  
+- Avoid domain overfitting and improve **generalizability**
 
-𝐿
-𝐺
-𝐴
-𝑁
-(
-𝐺
-,
-𝐷
-)
-=
-𝐸
-𝑦
-∼
-𝑝
-data
-(
-𝑦
-)
-[
-log
-⁡
-𝐷
-(
-𝑦
-)
-]
-+
-𝐸
-𝑥
-∼
-𝑝
-data
-(
-𝑥
-)
-[
-log
-⁡
-(
-1
-−
-𝐷
-(
-𝐺
-(
-𝑥
-)
-)
-)
-]
-L 
-GAN
-​
- (G,D)=E 
-y∼p 
-data
-​
- (y)
-​
- [logD(y)]+E 
-x∼p 
-data
-​
- (x)
-​
- [log(1−D(G(x)))]
-Cycle Consistency Loss:
+---
 
-𝐿
-𝑐
-𝑦
-𝑐
-(
-𝐺
-,
-𝐹
-)
-=
-𝐸
-𝑥
-[
-∥
-𝐹
-(
-𝐺
-(
-𝑥
-)
-)
-−
-𝑥
-∥
-1
-]
-+
-𝐸
-𝑦
-[
-∥
-𝐺
-(
-𝐹
-(
-𝑦
-)
-)
-−
-𝑦
-∥
-1
-]
-L 
-cyc
-​
- (G,F)=E 
-x
-​
- [∥F(G(x))−x∥ 
-1
-​
- ]+E 
-y
-​
- [∥G(F(y))−y∥ 
-1
-​
- ]
-Identity Loss (when input already belongs to target domain):
+### 📌 **Impact & Limitations**
 
-𝐿
-𝑖
-𝑑
-(
-𝐺
-)
-=
-𝐸
-𝑦
-[
-∥
-𝐺
-(
-𝑦
-)
-−
-𝑦
-∥
-1
-]
-L 
-id
-​
- (G)=E 
-y
-​
- [∥G(y)−y∥ 
-1
-​
- ]
-Gradient Consistency Loss:
+#### ✅ Impact:
+- Demonstrates how **unlabeled CT scans** can be segmented using only MRI-based labeled training.
+- Reduces clinical burden of annotating each modality individually.
+- Opens door for low-resource hospitals to use pretrained models cross-modally.
 
-𝐿
-𝑔
-𝑟
-𝑎
-𝑑
-(
-𝐺
-)
-=
-∥
-∇
-𝐺
-(
-𝑥
-)
-−
-∇
-𝑦
-∥
-1
-L 
-grad
-​
- (G)=∥∇G(x)−∇y∥ 
-1
-​
- 
-Where 
-∇
-∇ denotes the Sobel gradient operator.
+#### ❌ Limitations:
+- Fails to explicitly reconstruct synthetic images (no image-to-image translation).
+- Evaluation limited to **brain datasets**.
+- Sensitive to discriminator overfitting.
 
-📈 Evaluation Metrics
-Used to measure the similarity between synthesized and target images:
+---
 
-SSIM (Structural Similarity Index): Measures structural similarity
+### 🧬 **Architecture Overview**
 
-PSNR (Peak Signal-to-Noise Ratio): Higher indicates better quality
+![Domain Adaptation Network](https://i.ibb.co/mTnGx7M/domain-adapt.png)
 
-MAE (Mean Absolute Error): Pixel-wise absolute error
+> *Encoder extracts shared features. A discriminator tries to distinguish modality origin. Decoder is supervised only by source domain labels.*
 
-Edge Error Rate: Evaluated using gradient maps
+---
 
-Expert qualitative assessment was also used to assess the preservation of anatomical structures.
+### 🕰️ **Timeline Summary**
 
-🧩 Challenges Addressed
-Lack of aligned paired datasets for supervised training
+| Phase | Duration |
+|-------|----------|
+| Data Collection & Preprocessing | 1 week |
+| Network Setup & Pretraining | 2 weeks |
+| Domain Adaptation Training | 1.5 weeks |
+| Evaluation & Visualization | 1 week |
 
-Preserving organ/tumor boundaries and fine textures in generated images
-
-Overcoming domain gaps in intensity distributions between CT and MRI
-
-Ensuring realism while avoiding hallucinations or structure distortion
-
-🎯 Expected Deliverables
-Trained model that can synthesize CT from MRI (and vice versa) without paired data
-
-Implementation of gradient-aware loss for structure preservation
-
-Evaluation framework including both quantitative and expert-based metrics
-
-Visualization tools for anatomical overlays of real vs synthetic images
-
-Ablation study showing effect of each loss function
-
-🚀 Applications and Impact
-Used in radiotherapy planning, where MRI → CT conversion reduces radiation dose
-
-Can augment multimodal datasets when certain modalities are missing
-
-Helps in MRI-only workflows, making treatment planning safer and cheaper
-
-Serves as a pretraining step for segmentation and registration tasks
+---
