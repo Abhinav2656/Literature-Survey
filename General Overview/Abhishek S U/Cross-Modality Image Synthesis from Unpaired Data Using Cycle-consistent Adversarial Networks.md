@@ -6,40 +6,39 @@
 ---
 
 ### 🎯 **Objective**  
-To perform **unsupervised cross-modality adaptation** for medical image segmentation by learning **modality-invariant representations** using a CNN encoder-decoder structure enhanced with **adversarial domain adaptation**.  
-Target: Translate features learned from **MRI** to be applicable on **CT** (and vice versa) for segmentation, without labeled CT data.
+The objective of this paper is to perform **unsupervised cross-modality adaptation** for medical image segmentation by learning **modality-invariant representations** using a CNN encoder-decoder structure enhanced with **adversarial domain adaptation**. The goal is to translate features learned from **MRI** to be applicable to **CT** (and vice versa) for segmentation tasks, even without labeled CT data.
 
 ---
 
 ### 🧠 **Methodologies & Innovations**
 
-- **Adversarial Feature Learning**: Introduces a discriminator to distinguish source (MRI) from target (CT) domain features.
-- **Dual Encoder-Decoder Framework**: Only source data is labeled; target domain relies on learned feature alignment.
-- **Unsupervised Adaptation Loss**: Forces target domain features to mimic the source domain’s statistical characteristics.
-- **Patch-Level Discriminator**: Discriminator works on features, not images, improving generalization.
+- **Adversarial Feature Learning**: Introduces a discriminator to distinguish features from source (MRI) and target (CT) domains.
+- **Dual Encoder-Decoder Framework**: Only the source domain (MRI) is labeled, while the target domain (CT) relies on learned feature alignment.
+- **Unsupervised Adaptation Loss**: Encourages the target domain features to resemble the statistical characteristics of the source domain.
+- **Patch-Level Discriminator**: The discriminator operates on extracted features rather than images, improving generalization to diverse datasets.
 
 ---
 
 ### 🧪 **Data Preprocessing**
 
-#### 1. **Z-Score Normalization**  
-Standardizes each scan slice:  
-\[
-I_{\text{norm}} = \frac{I - \mu}{\sigma}
-\]  
-Where \( \mu \) and \( \sigma \) are the mean and standard deviation of the slice.
+1. **Z-Score Normalization**  
+Standardize each scan slice by subtracting the mean and dividing by the standard deviation:
+   \[
+   I_{\text{norm}} = \frac{I - \mu}{\sigma}
+   \]
+   where \( \mu \) and \( \sigma \) are the mean and standard deviation of the slice.
+   
+2. **Histogram Matching**  
+Reduce modality shift between CT and MRI:
+   \[
+   I_{\text{matched}} = \text{CDF}^{-1}_{\text{ref}}(\text{CDF}_{\text{input}}(I))
+   \]
 
-#### 2. **Histogram Matching**  
-To reduce modality shift between CT and MRI:  
-\[
-I_{\text{matched}} = \text{CDF}^{-1}_{\text{ref}}(\text{CDF}_{\text{input}}(I))
-\]
+3. **Resizing & Cropping**  
+All images are resized to a consistent size (e.g., 256×256 pixels) and center-cropped for consistent analysis.
 
-#### 3. **Resizing & Cropping**  
-All slices are resized to a fixed dimension (e.g., 256×256) and center-cropped.
-
-#### 4. **Data Augmentation**  
-Includes flipping, rotation, and Gaussian noise to improve domain generalization.
+4. **Data Augmentation**  
+Data augmentation strategies, including random flips, rotations, and Gaussian noise, are employed to improve domain generalization.
 
 ---
 
@@ -51,19 +50,19 @@ Includes flipping, rotation, and Gaussian noise to improve domain generalization
 - **Preprocessing Details**:
   - N4 bias field correction
   - Skull-stripping using FSL/BET
-  - Patch-based training for memory efficiency
+  - Patch-based training to reduce memory usage
 
 ---
 
 ### 🏗️ **Training Details**
 
 | Parameter | Value |
-|----------|-------|
+|-----------|-------|
 | Framework | TensorFlow |
 | Optimizer | Adam |
 | Learning Rate | 1e-4 |
 | Batch Size | 4 |
-| Losses | Cross-entropy (for segmentation), Adversarial loss (feature alignment) |
+| Loss Functions | Cross-entropy (segmentation), Adversarial loss (feature alignment) |
 | Training Time | ~15 hours on Nvidia GTX 1080Ti |
 
 ---
@@ -72,41 +71,39 @@ Includes flipping, rotation, and Gaussian noise to improve domain generalization
 
 | Metric | Description |
 |--------|-------------|
-| Dice Similarity Coefficient (DSC) | Measures overlap between predicted and ground truth masks |
-| Hausdorff Distance (HD) | Measures boundary error between segmentation contours |
-| Precision/Recall | Standard segmentation metrics to evaluate false positives/negatives |
-| Domain Classifier Accuracy | How distinguishable the features are across domains (lower is better) |
+| Dice Similarity Coefficient (DSC) | Measures the overlap between predicted and ground truth masks |
+| Hausdorff Distance (HD) | Evaluates boundary errors between segmentation contours |
+| Precision/Recall | Common metrics to evaluate false positives/negatives in segmentation |
+| Domain Classifier Accuracy | Measures the ability to distinguish between source and target domains (lower is better) |
 
 ---
 
 ### 🧩 **Challenges Addressed**
 
-- **No paired data** between MRI and CT scans  
-- MRI and CT have vastly different tissue contrasts and artifacts  
-- Labeling is available only for MRI → Need to generalize to CT  
-- Avoid domain overfitting and improve **generalizability**
+- **No paired data** between MRI and CT scans
+- MRI and CT images have different tissue contrasts and artifacts
+- Only MRI data is labeled, requiring generalization to CT
+- Mitigating domain overfitting and improving model **generalizability**
 
 ---
 
 ### 📌 **Impact & Limitations**
 
 #### ✅ Impact:
-- Demonstrates how **unlabeled CT scans** can be segmented using only MRI-based labeled training.
-- Reduces clinical burden of annotating each modality individually.
-- Opens door for low-resource hospitals to use pretrained models cross-modally.
+- Enables segmentation of **unlabeled CT scans** using MRI-based labeled training, offering a solution for cross-modality segmentation tasks.
+- Reduces the clinical burden of annotating data across different imaging modalities.
+- Potentially benefits **low-resource hospitals** by leveraging pretrained models for cross-modality tasks.
 
 #### ❌ Limitations:
-- Fails to explicitly reconstruct synthetic images (no image-to-image translation).
-- Evaluation limited to **brain datasets**.
-- Sensitive to discriminator overfitting.
+- Does not focus on generating synthetic images (no image-to-image translation).
+- Evaluation limited to **brain tumor datasets**.
+- Sensitive to **discriminator overfitting**, especially with limited domain data.
 
 ---
 
 ### 🧬 **Architecture Overview**
 
-![Domain Adaptation Network](https://i.ibb.co/mTnGx7M/domain-adapt.png)
-
-> *Encoder extracts shared features. A discriminator tries to distinguish modality origin. Decoder is supervised only by source domain labels.*
+The architecture uses a shared encoder to extract common features from MRI and CT scans. A discriminator attempts to classify whether the features come from the source or target domain. The decoder reconstructs the segmentation map using features from the encoder, with supervision provided only from the source domain.
 
 ---
 
@@ -118,5 +115,3 @@ Includes flipping, rotation, and Gaussian noise to improve domain generalization
 | Network Setup & Pretraining | 2 weeks |
 | Domain Adaptation Training | 1.5 weeks |
 | Evaluation & Visualization | 1 week |
-
----
