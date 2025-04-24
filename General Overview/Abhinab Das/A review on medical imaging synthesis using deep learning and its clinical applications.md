@@ -1,8 +1,8 @@
 ## 🧠 Overview of the Paper
 
-**Authors:** Tonghe Wang, Yang Lei, Yabo Fu, Jacob F. Wynne, Walter J. Curran, Tian Liu, Xiaofeng Yang
-**Publication**: Journal of Applied Clinical Medical Physics, 2021
-**DOI:** [10.1002/acm2.13121](https://doi.org/10.1002/acm2.13121)
+**Authors:** Tonghe Wang, Yang Lei, Yabo Fu, Jacob F. Wynne, Walter J. Curran, Tian Liu, Xiaofeng Yang  
+**Publication**: Journal of Applied Clinical Medical Physics, 2021  
+**DOI:** [10.1002/acm2.13121](https://doi.org/10.1002/acm2.13121)  
 
 ---
 
