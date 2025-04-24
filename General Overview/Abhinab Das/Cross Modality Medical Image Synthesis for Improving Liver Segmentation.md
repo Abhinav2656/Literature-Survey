@@ -1,5 +1,11 @@
 ## 🧠 **Overview of the Paper**
 
+**Authors**: Muhammad Rafiq, Hazrat Ali, Ghulam Mujtaba, Zubair Shah, Shoaib Azmat
+**Published**: arXiv, Mar 2025
+**DOI:** [10.48550/arXiv.2503.00945](https://doi.org/10.48550/arXiv.2503.00945).
+
+---
+
 ### 🎯 **Problem Statement**
 
 Deep learning for medical imaging (e.g., segmentation, diagnosis) typically requires large labeled datasets. However, acquiring such datasets—especially for MRI and CT scans—is:
@@ -13,12 +19,15 @@ Deep learning for medical imaging (e.g., segmentation, diagnosis) typically requ
 
 To address this, the authors explore **cross-modality image synthesis**: translating **abdominal CT scans into MRI images** using **unpaired data**. The core goal is to **augment the MRI dataset** with synthetic images and **improve liver segmentation accuracy** using U-Net.
 
+![[two-stage (EssNet+U-Net) approach.png]]
+
 ---
 
 ## 🏗️ **Architecture and Methodology**
 
 The authors propose a **two-stage deep learning pipeline**:
 
+![[workflow of the EssNet architecture.png]]
 ### 🔧 **1. EssNet (Enhanced CycleGAN for Image Synthesis)**
 
 - **EssNet** is an improved **CycleGAN** model with a key addition: a **segmentation branch** integrated into the generator architecture.
@@ -41,7 +50,6 @@ The authors propose a **two-stage deep learning pipeline**:
     - **Segmentation Loss**: Helps the generator produce deformation-free, aligned images by penalizing inaccurate segmentation predictions on synthetic MRI.
         
 - **Training Strategy**: Trained on **unpaired** abdominal CT and MRI data from the CHAOS dataset.
-    
 
 ### 🔍 **2. U-Net for Liver Segmentation**
 

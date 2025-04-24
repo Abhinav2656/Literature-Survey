@@ -1,5 +1,14 @@
 ## 🔍 Overview
 
+**Authors**: Cassandra Czobit and Reza Samavi
+**Published**: arXiv, Jan 2024
+**DOI Information**
+- **arXiv Preprint DOI**: [10.48550/arXiv.2401.00023](https://doi.org/10.48550/arXiv.2401.00023)
+- **Conference Proceedings DOI**: [10.54254/2753-8818/83/2025.20028](https://doi.org/10.54254/2753-8818/83/2025.20028)
+The arXiv DOI refers to the preprint version of the paper, while the conference proceedings DOI corresponds to the peer-reviewed version presented at the conference.​
+
+---
+
 ### 🧠 **Background & Motivation**
 
 Magnetic Resonance Imaging (MRI) is a crucial non-invasive imaging technique used for diagnosing neurological conditions. These scans are performed at various **field strengths** (commonly 1.5T and 3T), which impact image resolution and contrast. However, not all datasets are available at multiple field strengths. There is a growing need to **translate images across these field strengths**, especially when working with scarce or unbalanced medical data.
