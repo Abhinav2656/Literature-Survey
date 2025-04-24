@@ -1,11 +1,11 @@
 ## 🔍 Overview
 
-**Authors**: Cassandra Czobit and Reza Samavi
-**Published**: arXiv, Jan 2024
-**DOI Information**
-- **arXiv Preprint DOI**: [10.48550/arXiv.2401.00023](https://doi.org/10.48550/arXiv.2401.00023)
-- **Conference Proceedings DOI**: [10.54254/2753-8818/83/2025.20028](https://doi.org/10.54254/2753-8818/83/2025.20028)
-The arXiv DOI refers to the preprint version of the paper, while the conference proceedings DOI corresponds to the peer-reviewed version presented at the conference.​
+**Authors**: Cassandra Czobit and Reza Samavi   
+**Published**: arXiv, Jan 2024   
+**DOI Information**   
+- **arXiv Preprint DOI**: [10.48550/arXiv.2401.00023](https://doi.org/10.48550/arXiv.2401.00023)   
+- **Conference Proceedings DOI**: [10.54254/2753-8818/83/2025.20028](https://doi.org/10.54254/2753-8818/83/2025.20028)    
+The arXiv DOI refers to the preprint version of the paper, while the conference proceedings DOI corresponds to the peer-reviewed version presented at the conference.​   
 
 ---
 
@@ -128,7 +128,6 @@ A traditional Deep Convolutional GAN (DCGAN) was also implemented for comparison
 - Backward cycle (1.5T→3T→1.5T) was more accurate than forward
     
 - DCGAN suffered from **mode collapse** (limited image variety)
-    
 
 ---
 

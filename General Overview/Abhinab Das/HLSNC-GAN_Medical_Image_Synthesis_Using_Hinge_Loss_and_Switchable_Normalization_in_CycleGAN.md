@@ -1,8 +1,8 @@
 ## 📄 **Overview of the Paper**
 
-**Authors**: Yang Heng, Ma Yinghua, Fiaz Gul Khan, Ahmad Khan, and Zeng Hui  
-**Published in**: IEEE Access, April 2024  
-**DOI:** [10.1109/ACCESS.2024.3390245](https://doi.org/10.1109/ACCESS.2024.3390245)
+**Authors**: Yang Heng, Ma Yinghua, Fiaz Gul Khan, Ahmad Khan, and Zeng Hui     
+**Published in**: IEEE Access, April 2024     
+**DOI:** [10.1109/ACCESS.2024.3390245](https://doi.org/10.1109/ACCESS.2024.3390245)     
 
 ---
 
@@ -82,7 +82,7 @@ The authors propose a **new architecture**, HLSNC-GAN, based on the CycleGAN fra
     
 - Helps maintain **convergence speed** and **stability**, particularly in complex adversarial setups.
 
-![[HLSNC-GAN.png]]
+![HLSNC-GAN](./Assets/HLSNC-GAN.png)
 
 ---
 
@@ -105,9 +105,10 @@ HLSNC-GAN retains the dual-generator and dual-discriminator structure of CycleGA
     - CT → synthetic MRI (sMRI)
 
 
-![[HLSNC-GAN’s generator.png]]
+![HLSNC-GAN's generator](./Assets/HLSNC-GAN’s%20generator.png)
 
-![[HLSNC-GAN’s resnet block.png]]
+![HLSNC-GAN's resnet block](./Assets/HLSNC-GAN’s%20resnet%20block.png)
+
 ### **Discriminator**
 
 - Uses a **PatchGAN**-like setup with **Conv2D-SN-LeakyReLU** blocks.
@@ -116,28 +117,28 @@ HLSNC-GAN retains the dual-generator and dual-discriminator structure of CycleGA
     
 - Classifies whether each patch in the image is real or fake, which encourages **local realism** in outputs.
 
-![[HLSNC-GAN’s discriminator.png]]
+![HLSNC-GAN's discriminator](./Assets/HLSNC-GAN’s%20discriminator.png)
 
 ---
 
 ## 📉 **Loss Functions Used**
 
-1. **Adversarial Loss** – Encourages generators to produce realistic images that can fool discriminators.
-    ![[adversarial loss.png]]
+1. **Adversarial Loss** – Encourages generators to produce realistic images that can fool discriminators.  
+    ![adversarial loss](./Assets/adversarial%20loss.png)
     
-2. **Cycle Consistency Loss** – Enforces bidirectional transformation (MRI → CT → MRI).
-    ![[cycle consistency loss.png]]
+2. **Cycle Consistency Loss** – Enforces bidirectional transformation (MRI → CT → MRI).  
+    ![cycle consistency loss](./Assets/cycle%20consistency%20loss.png)
     
-3. **Identity Loss** – Ensures that images from the target domain remain unchanged when passed through the generator.
-    ![[identity loss.png]] 
+3. **Identity Loss** – Ensures that images from the target domain remain unchanged when passed through the generator.  
+    ![identity loss](./Assets/identity%20loss.png) 
     
-4. **Hinge Loss** – Improves realism and diversity.
-    ![[discriminator, the hinge loss function.png]]
+4. **Hinge Loss** – Improves realism and diversity.  
+    ![discriminator, the hinge loss function](./Assets/discriminator%2C%20the%20hinge%20loss%20function.png)  
     
-    ![[generator, the hinge loss function.png]]
+    ![generator, the hinge loss function](./Assets/generator%2C%20the%20hinge%20loss%20function.png)  
     
-5. **Total Loss** = Weighted combination of all above.
-    ![[combined loss.png]]
+5. **Total Loss** = Weighted combination of all above.  
+    ![combined loss](./Assets/combined%20loss.png)  
 
 ---
 
