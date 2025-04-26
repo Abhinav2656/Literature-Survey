@@ -82,7 +82,7 @@ The authors propose a **new architecture**, HLSNC-GAN, based on the CycleGAN fra
     
 - Helps maintain **convergence speed** and **stability**, particularly in complex adversarial setups.
 
-![HLSNC-GAN](./Assets/HLSNC-GAN.png)
+<img src="Assets/HLSNC-GAN.png" alt="" width="600"/>
 
 ---
 
@@ -105,9 +105,11 @@ HLSNC-GAN retains the dual-generator and dual-discriminator structure of CycleGA
     - CT → synthetic MRI (sMRI)
 
 
-![HLSNC-GAN's generator](./Assets/HLSNC-GAN’s%20generator.png)
+<img src="Assets/HLSNC-GAN-generator.png" alt="" width="600"/>
 
-![HLSNC-GAN's resnet block](./Assets/HLSNC-GAN’s%20resnet%20block.png)
+
+<img src="Assets/HLSNC-GAN-resnet block.png" alt="" width="600"/>
+
 
 ### **Discriminator**
 
@@ -117,28 +119,33 @@ HLSNC-GAN retains the dual-generator and dual-discriminator structure of CycleGA
     
 - Classifies whether each patch in the image is real or fake, which encourages **local realism** in outputs.
 
-![HLSNC-GAN's discriminator](./Assets/HLSNC-GAN’s%20discriminator.png)
+<img src="Assets/HLSNC-GAN-discriminator.png" alt="" width="600"/>
+
 
 ---
 
 ## 📉 **Loss Functions Used**
 
 1. **Adversarial Loss** – Encourages generators to produce realistic images that can fool discriminators.  
-    ![adversarial loss](./Assets/adversarial%20loss.png)
+    
+	 <img src="Assets/adversarial loss.png" alt="" width="600"/>
     
 2. **Cycle Consistency Loss** – Enforces bidirectional transformation (MRI → CT → MRI).  
-    ![cycle consistency loss](./Assets/cycle%20consistency%20loss.png)
+    
+    <img src="cycle consistency loss.png" alt="" width="600"/>
     
 3. **Identity Loss** – Ensures that images from the target domain remain unchanged when passed through the generator.  
-    ![identity loss](./Assets/identity%20loss.png) 
+     
+    <img src="Assets/identity loss.png" alt="" width="600"/>
     
 4. **Hinge Loss** – Improves realism and diversity.  
-    ![discriminator, the hinge loss function](./Assets/discriminator%2C%20the%20hinge%20loss%20function.png)  
     
-    ![generator, the hinge loss function](./Assets/generator%2C%20the%20hinge%20loss%20function.png)  
+    <img src="Assets/discriminator the hinge loss function.png" alt="" width="600"/>  
+    
+    <img src="Assets/generator, the hinge loss function.png" alt="" width="600"/>  
     
 5. **Total Loss** = Weighted combination of all above.  
-    ![combined loss](./Assets/combined%20loss.png)  
+    <img src="Assets/combined loss.png" alt="" width="600"/>  
 
 ---
 

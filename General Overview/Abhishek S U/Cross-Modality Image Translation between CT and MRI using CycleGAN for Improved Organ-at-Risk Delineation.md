@@ -1,4 +1,4 @@
-# 📄 Paper Title: **Cross-Modality Image Translation between CT and MRI using CycleGAN for Improved Organ-at-Risk Delineation**  
+📄 Paper Title: **Cross-Modality Image Translation between CT and MRI using CycleGAN for Improved Organ-at-Risk Delineation**  
 **Authors**: J. Wolterink, T. Leiner, M. Viergever, I. Isgum  
 **Conference**: IEEE Transactions on Medical Imaging (TMI) 2017  
 

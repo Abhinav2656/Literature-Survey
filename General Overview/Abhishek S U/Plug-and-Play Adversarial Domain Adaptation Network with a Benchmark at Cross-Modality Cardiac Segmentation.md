@@ -1,4 +1,4 @@
-# 📄 Paper Title: **PnP-AdaNet: Plug-and-Play Adversarial Domain Adaptation Network with a Benchmark at Cross-Modality Cardiac Segmentation**  
+📄 Paper Title: **PnP-AdaNet: Plug-and-Play Adversarial Domain Adaptation Network with a Benchmark at Cross-Modality Cardiac Segmentation**  
 **Authors**: Qi Dou, Cheng Ouyang, Cheng Chen, Hao Chen, Ben Glocker, Xiahai Zhuang, Pheng-Ann Heng  
 **Conference**: MICCAI 2018  
 

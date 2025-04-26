@@ -19,7 +19,8 @@ Deep learning for medical imaging (e.g., segmentation, diagnosis) typically requ
 
 To address this, the authors explore **cross-modality image synthesis**: translating **abdominal CT scans into MRI images** using **unpaired data**. The core goal is to **augment the MRI dataset** with synthetic images and **improve liver segmentation accuracy** using U-Net.
 
-![Two-stage (EssNet+U-Net) approach](./Assets/two-stage%20(EssNet+U-Net)%20approach.png)
+<img src="Assets/two-stage (EssNet+U-Net) approach.png" alt="" width="600"/>
+
 
 ---
 
@@ -27,7 +28,8 @@ To address this, the authors explore **cross-modality image synthesis**: transla
 
 The authors propose a **two-stage deep learning pipeline**:
 
-![workflow of the EssNet architecture](./Assets/workflow%20of%20the%20EssNet%20architecture.png)
+<img src="Assets/workflow of the EssNet architecture.png" alt="" width="600"/>
+
 ### 🔧 **1. EssNet (Enhanced CycleGAN for Image Synthesis)**
 
 - **EssNet** is an improved **CycleGAN** model with a key addition: a **segmentation branch** integrated into the generator architecture.

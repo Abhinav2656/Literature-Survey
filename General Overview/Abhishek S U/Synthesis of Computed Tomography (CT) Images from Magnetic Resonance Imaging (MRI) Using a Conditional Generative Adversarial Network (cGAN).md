@@ -1,4 +1,4 @@
-# 📄 Paper Title: **Synthesis of Computed Tomography (CT) Images from Magnetic Resonance Imaging (MRI) Using a Conditional Generative Adversarial Network (cGAN)**  
+📄 Paper Title: **Synthesis of Computed Tomography (CT) Images from Magnetic Resonance Imaging (MRI) Using a Conditional Generative Adversarial Network (cGAN)**  
 **Authors**: D. Nie, L. Trullo, J. Lian, C. Petitjean, S. Ruan, D. Shen, and W. Wang  
 **Conference**: MICCAI 2017  
 

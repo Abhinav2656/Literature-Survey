@@ -1,4 +1,4 @@
-# 📄 Paper Title: **Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss**  
+📄 Paper Title: **Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss**  
 **Authors**: Q. Dou, D. Cofer, H. Chen, G. Chen, J. Qin, P. Heng  
 **Conference**: IJCAI 2018  
 
