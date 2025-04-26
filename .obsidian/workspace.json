@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "General Overview/Abhishek S U/Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss"
+              "title": "README"
             }
           }
         ],
@@ -185,6 +185,11 @@
   },
   "active": "53e2dfc6089fc078",
   "lastOpenFiles": [
+    "mage Translation-Based Unsupervised Cross-Modality Domain Adaptation for Medical Image Segmentation.md",
+    "README.md",
+    "General Overview/Priyanshu Thakur/Unsupervised Medical Image Translation with Adversarial Diffusion Models.md.md",
+    "Untitled.md",
+    "General Overview/Abhishek S U/Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss.md",
     "General Overview/Abhishek S U/Synthesis of Computed Tomography (CT) Images from Magnetic Resonance Imaging (MRI) Using a Conditional Generative Adversarial Network (cGAN).md",
     "General Overview/Abhishek S U/Plug-and-Play Adversarial Domain Adaptation Network with a Benchmark at Cross-Modality Cardiac Segmentation.md",
     "General Overview/Abhishek S U/Cross-Modality Image Translation between CT and MRI using CycleGAN for Improved Organ-at-Risk Delineation.md",
@@ -196,17 +201,13 @@
     "Papers/Abhishek S U/Paper_2_CrossModality_Transformer.pdf",
     "Papers/Abhishek S U/Paper_1_Attention_Discriminator.pdf",
     "Papers/Abhishek S U",
-    "General Overview/Abhishek S U/Unsupervised Cross-Modality Domain Adaptation of ConvNets for Biomedical Image Segmentations with Adversarial Loss.md",
     "General Overview/Abhishek S U",
     "General Overview/Priyanshu Thakur/Diffusion Bridge Models for 3D Medical Image Translation.md.md",
     "General Overview/Priyanshu Thakur/Deep-learning-based cross-modality translation from Stokes image to bright-field contrast.md.md",
     "General Overview/Priyanshu Thakur/MedPrompt Cross-Modal Prompting for Multi-Task Medical Image Translation.md.md",
-    "General Overview/Priyanshu Thakur/Unsupervised Medical Image Translation with Adversarial Diffusion Models.md.md",
     "General Overview/Abhinab Das/HLSNC-GAN_Medical_Image_Synthesis_Using_Hinge_Loss_and_Switchable_Normalization_in_CycleGAN.md",
     "Papers/Priyanshu Thakur/Deep-learning-based cross-modality translation from Stokes image to bright-field contrast.pdf",
-    "mage Translation-Based Unsupervised Cross-Modality Domain Adaptation for Medical Image Segmentation.md",
     "Untitled 1.md",
-    "Untitled.md",
     "General Overview/Abhinab Das/A review on medical imaging synthesis using deep learning and its clinical applications.md",
     "General Overview/Abhinab Das/Cross Modality Medical Image Synthesis for Improving Liver Segmentation.md",
     "General Overview/Abhinab Das/CycleGAN Models for MRI Image Translation.md",

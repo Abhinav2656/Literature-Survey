@@ -1,11 +1,11 @@
 
 ## 📄 **Overview of the Paper**
 
-**Authors**: Muzaffer Özbey, Onat Dalmaz, Salman UH Dar, Hasan A Bedel, Şaban Öztürk, Alper Güngör, Tolga Çukur
+**Authors**: Muzaffer Özbey, Onat Dalmaz, Salman UH Dar, Hasan A Bedel, Şaban Öztürk, Alper Güngör, Tolga Çukur  
 **Affiliations:**
-- Department of Electrical and Electronics Engineering, and the National Magnetic Resonance Research Center (UMRAM), Bilkent University, Ankara, Turkey
-- Amasya University, Turkey (Ş. Öztürk)
-- ASELSAN Research Center, Turkey (A. Güngör)
+- Department of Electrical and Electronics Engineering, and the National Magnetic Resonance Research Center (UMRAM), Bilkent University, Ankara, Turkey   
+- Amasya University, Turkey (Ş. Öztürk)   
+- ASELSAN Research Center, Turkey (A. Güngör)   
 **Published on**: March 31, 2023 (arXiv version 3)   
 **DOI:** Not published yet in a journal (still a preprint). [arXiv:2207.08208](https://arxiv.org/abs/2207.08208)    
 
