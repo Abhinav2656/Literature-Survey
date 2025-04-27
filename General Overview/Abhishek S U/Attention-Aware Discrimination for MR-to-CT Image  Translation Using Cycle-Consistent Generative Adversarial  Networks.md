@@ -1,4 +1,3 @@
-# 📄 Literature Survey on "Attention-Aware Discrimination for MR-to-CT Image Translation Using Cycle-Consistent Generative Adversarial Networks"
 
 ## 🎯 Overview
 This paper introduces an **Attention-Aware Cycle-Consistent Generative Adversarial Network (CycleGAN)** for translating MR images to CT images. The method incorporates an attention mechanism to focus on relevant features, improving the model's ability to generate high-quality CT images that are structurally consistent with the MR images.
