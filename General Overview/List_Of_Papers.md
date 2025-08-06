@@ -105,3 +105,7 @@ X. Chen, C.-M. Pun and S. Wang, "MedPrompt: Cross-Modal Prompting for Multi-Task
 M. Özbey, O. Dalmaz, S. U. H. Dar, H. A. Bedel, Ş. Öztürk, A. Güngör, and T. Çukur, “Unsupervised Medical Image Translation with Adversarial Diffusion Models,” _arXiv preprint arXiv:2207.08208_, Mar. 2023. [Online]. Available: [https://arxiv.org/abs/2207.08208](https://arxiv.org/abs/2207.08208)
 
 
+### 📃 Citation (IEEE Format)
+
+Q. Al-Taei and L. Durrani, “Application of Artificial Intelligence in Medicine: An Overview,” *International Journal of Engineering and Advanced Technology (IJEAT)*, vol. 9, no. 4, pp. 35–38, Apr. 2020, doi: 10.35940/ijeat.D6856.049420. [Online]. Available: https://www.ijeat.org/portfolio-item/d6856049420/
+
