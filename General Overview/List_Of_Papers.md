@@ -247,3 +247,45 @@ K. Koshino, R. A. Werner, M. G. Pomper, R. A. Bundschuh, F. Toriumi, T. Higuchi,
 
 ## 47.  
 A. A. Showrov, M. T. Aziz, H. R. Nabil, J. R. Jim, M. M. Kabir, M. F. Mridha, (Senior Member, IEEE), N. Asai, and J. Shin, (Senior Member, IEEE), "Generative Adversarial Networks (GANs) in Medical Imaging: Advancements, Applications and Challenges," IEEE Access, vol. 11, pp. 1-25, 2023, doi: 10.1109/ACCESS.2024.3370848.
+
+---
+
+## 48.
+D. Nie, L. Yu, L. Gao, and D. Shen, “From CNNs to GANs for Cross-Modality Medical Image Estimation,” *IEEE Transactions on Medical Imaging*, vol. 38, no. 2, pp. 482–494, Feb. 2019.
+
+---
+
+## 49.
+S. D. Pathak, D. M. Bodkhe, and P. S. Deshmukh, “Survey: Application and Analysis of Generative Adversarial Networks in Medical Images,” *Materials Today: Proceedings*, 2023, doi: 10.1016/j.matpr.2023.07.207.
+
+---
+
+## 50.
+I. Goodfellow, Y. Bengio, M. Mirza, et al., “Generative Adversarial Networks: Introduction and Outlook,” *Foundations and Trends® in Machine Learning*, vol. 13, no. 3, pp. 205–522, 2020, doi: 10.1561/2200000071.
+
+---
+
+## 51.
+P. Isola, J.-Y. Zhu, T. Zhou, and A. A. Efros, “Image-to-Image Translation with Conditional Adversarial Networks,” in *Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR)*, 2017, pp. 5967–5976, doi: 10.1109/CVPR.2017.632.
+
+---
+
+## 52. 
+T. Karras, S. Laine, and T. Aila, “A Style-Based Generator Architecture for Generative Adversarial Networks,” in *Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR)*, 2019, pp. 4401–4410, doi: 10.1109/CVPR.2019.00453.
+
+---
+
+## 53.
+M. Mirza and S. Osindero, “Conditional Generative Adversarial Nets,” _arXiv preprint arXiv:1411.1784_, 2014.
+
+---
+
+## 54.
+I. Goodfellow *et al.*, “Generative Adversarial Nets,” in *Advances in Neural Information Processing Systems (NeurIPS)*, 2014.
+
+---
+
+## 55.
+K. He, X. Zhang, S. Ren, and J. Sun, “Deep Residual Learning for Image Recognition,” in _Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR)_, 2016, pp. 770–778, doi: 10.1109/CVPR.2016.90.
+
+---
